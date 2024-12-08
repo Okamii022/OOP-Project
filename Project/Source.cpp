@@ -5,6 +5,6 @@
 
 int main() {
 
-	std::cout << "Hello, this is a test line.";
+	std::cout << "Hello, this is a test line!";
 	return 0;
 }
