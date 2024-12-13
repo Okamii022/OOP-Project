@@ -13,7 +13,11 @@ public:
 	{
 		//copy for dynamic field to be added (does it belong here though?)
 	}
-	Row(int colCount)
+
+	Row(int colCount) {
+	
+	}
+
 	~Row()
 	{
 		delete[] value;

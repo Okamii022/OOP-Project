@@ -1,7 +1,7 @@
 #pragma once
 
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 
 class Column {
 private:
@@ -17,19 +17,26 @@ public:
 		const std::string defaultValue, const bool isPrimaryKey, const bool isForeignKey)
 		:columnName(columnName), columnType(columnType), size(size), defaultValue(defaultValue),
 		isPrimaryKey(isPrimaryKey), isForeignKey(isForeignKey){ }
+	
 	//getters and setters
 	std::string getName();
 	void setName(const std::string name);
+
 	std::string getType();
 	void setType(const std::string type);
+
 	int getSize();
 	void setSize(const int sizeOfAttribute);
+
 	std::string getDefaultVal();
-	void setDefaultVal(const std::string default);
+	void setDefaultVal(const std::string def);
+
 	bool getPk();
 	void setPk(const bool isPk);
+
 	bool getFk();
 	void setFk(const bool isFk);
+
 	//destructor
 	~Column() {
 
