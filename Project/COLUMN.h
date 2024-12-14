@@ -5,12 +5,12 @@
 
 class Column {
 private:
-	std::string columnName = ""; //name of the column
-	std::string columnType = ""; // type of the column, integer, float or text
-	int size = 0; //the size of the data associated to each column
-	std::string defaultValue = ""; // default value if no value is added
-	bool isPrimaryKey = false; //is the column a primary key or not
-	bool isForeignKey = false; //is the column a foreign key or not
+	std::string columnName; //name of the column
+	std::string columnType; // type of the column, integer, float or text
+	int size;//the size of the data associated to each column
+	std::string defaultValue;// default value if no value is added
+	bool isPrimaryKey; //is the column a primary key or not
+
 public:
 	//parameterized ctor using initializer list
 	Column (const std::string columnName, const std::string columnType, const int size, 
