@@ -13,10 +13,11 @@ private:
 
 public:
 	//parameterized ctor using initializer list
-	Column (const std::string columnName, const std::string columnType, const int size, 
-		const std::string defaultValue, const bool isPrimaryKey, const bool isForeignKey)
-		:columnName(columnName), columnType(columnType), size(size), defaultValue(defaultValue),
-		isPrimaryKey(isPrimaryKey), isForeignKey(isForeignKey){ }
+	Column(const std::string columnName, const std::string columnType, const int size,
+		const std::string defaultValue, const bool isPrimaryKey, const bool isForeignKey);
+		//add in the cpp
+		//:columnName(columnName), columnType(columnType), size(size), defaultValue(defaultValue),
+		//isPrimaryKey(isPrimaryKey), isForeignKey(isForeignKey){ }
 	
 	//getters and setters
 	std::string getName();
@@ -38,7 +39,5 @@ public:
 	void setFk(const bool isFk);
 
 	//destructor
-	~Column() {
-
-	}
+	~Column() 
 };
