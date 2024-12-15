@@ -4,29 +4,55 @@
 using namespace std;
 class Row {
 private:
-	int rowNumber = 0;
+	
 	std::string* value = nullptr; //dynamic array for storing each value
-	int columnNumber = 0; //will be used for the dynamic array
+	int noOfColumns = 0; //will be used for the dynamic array
+
+	static int ROW_NUMBER;
 	
 public:
 	friend void operator<<(std::ostream& console, const Row& other);
-	Row(int rowNumber, std::string* copyvalue, int columnNumber) : rowNumber(rowNumber), columnNumber(columnNumber)
+	Row(std::string* copyvalue, int noOfCol) :noOfColumns(noOfCol)
 	{
-		this->value = new std::string[columnNumber];
-		for (int i = 0; i < columnNumber; i++)
+		this->value = new std::string[noOfCol];
+		for (int i = 0; i < noOfCol; i++) {
 			this->value[i] = copyvalue[i];
+		}
+
+		Row::ROW_NUMBER++;
 	}
 
 	~Row() {
 		delete[] this->value;
 	}
 
+	int getColNumber() {
+		return this->noOfColumns;
+	}
+
+	void setColNumber(int columnNumber) {
+		if (columnNumber <= 0)
+			throw "No attributes added";
+		else
+		{
+			std::string* newValues = new std::string[columnNumber];
+			for (int i = 0; i < columnNumber; i++) {
+				newValues[i] = this->value[i];
+			}
+		}
+		delete[] this->value;
+		
+	}
+	
+
 
 };
+int Row::ROW_NUMBER = 0;
 void operator<<(std::ostream& console, const Row& other) {
-	console << "Row Number: " << other.rowNumber<<endl;
+	console << endl;
+	console << "Row Number: " << other.ROW_NUMBER<<endl;
 	console << "Items: " << endl;
-	for (int i = 0; i < other.columnNumber; i++)
+	for (int i = 0; i < other.noOfColumns; i++)
 		console << other.value[i] << ',';
 }
 
