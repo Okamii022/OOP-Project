@@ -9,10 +9,17 @@ private:
 	int columnNumber; //will be used for the dynamic array
 
 public:
-	//add the initializer list in the cpp file tomorrow(or tonight later)
-	Row(int rowNumber, std::string value, int columnNumber);
-	//same here
-	Row(int colCount);
+	
+	Row(int rowNumber, std::string copyvalue, int columnNumber) : rowNumber(rowNumber), columnNumber(columnNumber)
+	{
+		this->value = new std::string[columnNumber];
+		for (int i = 0; i < columnNumber; i++)
+			this->value[i] = copyvalue[i];
+	}
 
-	~Row();
+	~Row() {
+		delete[] this->value;
+	}
+
+
 };
