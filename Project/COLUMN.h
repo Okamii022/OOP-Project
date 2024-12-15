@@ -39,5 +39,5 @@ public:
 	void setFk(const bool isFk);
 
 	//destructor
-	~Column() 
+	~Column(); 
 };
