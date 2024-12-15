@@ -4,7 +4,10 @@
 
 int main()
 {
-    Row rowEntry(1, "test", 4);
+    string test[] = { "key","board","ceva"};
+    int noCol = 3;
+    int row = 1;
+    Row rowEntry(row, test, noCol);
     std::cout << rowEntry;
 }
 
